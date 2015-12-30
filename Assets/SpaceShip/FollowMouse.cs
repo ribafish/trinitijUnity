@@ -11,7 +11,7 @@ public class FollowMouse : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		// Generate a plane that intersects the transform's position with an 
 		Plane playerPlane = new Plane(transform.forward, transform.position+transform.forward*50);
 		//Debug.Log (transform.forward*200);
@@ -39,11 +39,11 @@ public class FollowMouse : MonoBehaviour {
 			Vector3 targetPoint = ray.GetPoint(hitdist);
 
 
-			Vector3 normal = Vector3.Slerp(transform.up, Vector3.up, speed * Time.deltaTime);
+			//Vector3 normal = Vector3.Slerp(transform.up, Vector3.up, speed * Time.deltaTime);
 
 			
 			// Determine the target rotation.  This is the rotation if the transform looks at the target point.
-			Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position, normal);
+			Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position, transform.up	);
 
 			// Smoothly rotate towards 
 			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
