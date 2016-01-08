@@ -52,11 +52,13 @@
      <Compile Include="Assets\Other\Scripts\Camera\PivotBasedCameraRig.cs" />
      <Compile Include="Assets\Other\Scripts\Camera\ProtectCameraFromWallClip.cs" />
      <Compile Include="Assets\Other\Scripts\Camera\TargetFieldOfView.cs" />
+     <Compile Include="Assets\Other\Scripts\Enemy\EnemyLogic.cs" />
      <Compile Include="Assets\Other\Scripts\Particle\OrbitCamera.cs" />
      <Compile Include="Assets\Other\Scripts\Particle\TestParticles.cs" />
      <Compile Include="Assets\Other\Scripts\Player\FollowMouse.cs" />
      <Compile Include="Assets\Other\Scripts\Space\Asteroid\AsteroidForce.cs" />
      <Compile Include="Assets\Other\Scripts\Space\Planet\Rotation.cs" />
+     <Compile Include="Assets\Other\Scripts\UI\IntroControl.cs" />
      <None Include="Assets\Models\Prefabs\Neutral\Ko je nekaj notri me pobrisi.txt" />
      <None Include="Assets\Other\Shaders\Space\Asteroid\Ko je nekaj notri me pobrisi.txt" />
      <None Include="Assets\Models\Prefabs\Enemy\Ko je nekaj notri me pobrisi.txt" />
