@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Globals : MonoBehaviour {
 
     static Globals instance;
 
-    public SceneManager sceneManager;
+    public MySceneManager sceneManager;
     public GlobalAudioLevel globalAudioLevel;
 
 	// Use this for initialization
@@ -21,10 +22,5 @@ public class Globals : MonoBehaviour {
         {
             Destroy(this);
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

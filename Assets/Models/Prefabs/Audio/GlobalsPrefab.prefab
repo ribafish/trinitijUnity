@@ -56,7 +56,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 416480}
-  - 114: {fileID: 11482898}
+  - 114: {fileID: 11483614}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0376fdf5955c3c84bb21ccbe2e4dfbc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneManager: {fileID: 11482898}
+  sceneManager: {fileID: 11483614}
   globalAudioLevel: {fileID: 11414916}
 --- !u!114 &11479086
 MonoBehaviour:
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075e6fe507034184a90b4e62f0d74176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11482898
+--- !u!114 &11483614
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 177328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f0d7b7e05fa2564597fbe140f171e3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a8346e04e18bfd43a024328c2f05705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &100100000
