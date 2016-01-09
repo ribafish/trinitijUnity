@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SceneManager : MonoBehaviour {
 
@@ -21,11 +22,13 @@ public class SceneManager : MonoBehaviour {
 	
 	public void SwitchToScene (int sceneNum)
     {
-        Application.LoadLevel(sceneNum);
+        //Application.LoadLevel(sceneNum);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneNum);
     }
 
     public void SwitchToScene(string sceneName)
     {
-        Application.LoadLevel(sceneName);
+        //Application.LoadLevel(sceneName);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
 }

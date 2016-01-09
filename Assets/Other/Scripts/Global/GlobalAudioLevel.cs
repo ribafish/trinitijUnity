@@ -4,8 +4,8 @@ using System.Collections;
 
 public class GlobalAudioLevel : MonoBehaviour {
 
-    [Range(0.0f, 1.0f)] public float musicVolume = 0.5f;
-    [Range(0.0f, 1.0f)] public float efxVolume = 0.5f;
+    [Range(0.0f, 1.0f)] public static float musicVolume = 0.5f;
+    [Range(0.0f, 1.0f)] public static float efxVolume = 0.5f;
     public AudioSource musicAudioSource;
     public AudioSource efxAudioSource;
 
