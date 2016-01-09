@@ -45,8 +45,8 @@ public class ShipControls : MonoBehaviour {
 
 
 		foreach (ParticleSystem ps in busters) {
-			ps.Emit ((int)(100 * thrust));
-			ps.startSpeed = 30 * thrust;
+			ps.Emit ((int)(10 * thrust));
+			//ps.startSpeed = 30 * thrust;
 		}
 
 		VignetteAndChromaticAberration vcm = shipCamera.GetComponent<VignetteAndChromaticAberration> ();
