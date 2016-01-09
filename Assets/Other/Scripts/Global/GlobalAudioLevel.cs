@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using System.Collections;
 
 public class GlobalAudioLevel : MonoBehaviour {
 
-    [Range(0.0f, 1.0f)] public static float musicVolume = 0.5f;
-    [Range(0.0f, 1.0f)] public static float efxVolume = 0.5f;
-    public AudioSource musicAudioSource;
-    public AudioSource efxAudioSource;
+    [Range(0.0f, 1.0f)] public static float musicVolume = 0.0f;
+    [Range(0.0f, 1.0f)] public static float efxVolume = 0.0f;
+    public AudioMixer mainAudioMixer;
 
     // Use this for initialization
     void Start () {
-        musicAudioSource.volume = musicVolume;
-        efxAudioSource.volume = efxVolume;
-	}
+        mainAudioMixer.SetFloat("musicVolume" ,musicVolume);
+        mainAudioMixer.SetFloat("efxVolume", efxVolume);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,14 +22,16 @@ public class GlobalAudioLevel : MonoBehaviour {
 
     public void SetMusicVolume(float newVolume)
     {
-        musicVolume = newVolume;
-        musicAudioSource.volume = musicVolume;
+        if (newVolume <= -40) musicVolume = -100;
+        else musicVolume = newVolume;
+        mainAudioMixer.SetFloat("musicVolume", musicVolume);
     }
 
     public void SetEfxVolume(float newVolume)
     {
-        efxVolume = newVolume;
-        efxAudioSource.volume = efxVolume;
+        if (newVolume <= -40) efxVolume = -100;
+        else efxVolume = newVolume;
+        mainAudioMixer.SetFloat("efxVolume", efxVolume);
     }
     
 }
