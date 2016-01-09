@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 475466}
   - 198: {fileID: 19874352}
   - 199: {fileID: 19965016}
+  - 114: {fileID: 11498316}
   m_Layer: 0
   m_Name: GunShot
   m_TagString: Gun
@@ -29,6 +30,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11498316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff9190ea1b604c23914d49afd2e85fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &19874352
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1534,7 +1546,7 @@ ParticleSystemRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141466}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:

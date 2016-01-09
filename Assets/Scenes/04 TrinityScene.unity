@@ -132,6 +132,10 @@ Prefab:
       propertyPath: m_Name
       value: GunRight
       objectReference: {fileID: 0}
+    - target: {fileID: 141466, guid: 76b286e5bc56c4af08ff05f77bff8d7b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 76b286e5bc56c4af08ff05f77bff8d7b, type: 2}
   m_IsPrefabParent: 0
