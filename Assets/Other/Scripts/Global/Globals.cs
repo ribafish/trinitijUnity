@@ -4,10 +4,11 @@ using System.Collections;
 
 public class Globals : MonoBehaviour {
 
-    static Globals instance;
+    public static Globals instance;
 
     public MySceneManager sceneManager;
     public GlobalAudioLevel globalAudioLevel;
+    public Pause pauseGame;
 
 	// Use this for initialization
 	void Start ()
