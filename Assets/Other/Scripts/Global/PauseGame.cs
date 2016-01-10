@@ -32,15 +32,15 @@ public class PauseGame : MonoBehaviour {
 
     public void Pause()
     {
-        if (instance.isPaused == true)
+        if (isPaused == true)
         {
-            instance.isPaused = false;
+            isPaused = false;
             Globals.instance.menuManager.closeCurrentMenu();
             Time.timeScale = 1.0f;  // Should resume game
         }
         else
         {
-            instance.isPaused = true;
+            isPaused = true;
             Time.timeScale = 0.0f;  // Should pause game
 
             Globals.instance.menuManager.ShowMenu(pauseMenu);
@@ -49,6 +49,6 @@ public class PauseGame : MonoBehaviour {
 
     public bool IsPaused()
     {
-        return instance.isPaused;
+        return isPaused;
     }
 }

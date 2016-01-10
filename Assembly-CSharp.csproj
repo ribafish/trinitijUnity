@@ -45,8 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Other\Menu Animations\Menu.cs" />
-     <Compile Include="Assets\Other\Menu Animations\MenuManager.cs" />
+     <Compile Include="Assets\DebugLog.cs" />
+     <Compile Include="Assets\Models\Prefabs\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Other\Scripts\Camera\AbstractTargetFollower.cs" />
      <Compile Include="Assets\Other\Scripts\Camera\AutoCam.cs" />
      <Compile Include="Assets\Other\Scripts\Camera\HandHeldCam.cs" />
@@ -62,11 +62,14 @@
      <Compile Include="Assets\Other\Scripts\Global\MusicManager.cs" />
      <Compile Include="Assets\Other\Scripts\Global\MySceneManager.cs" />
      <Compile Include="Assets\Other\Scripts\Global\MyUnitySingleton.cs" />
-     <Compile Include="Assets\Other\Scripts\Global\Pause.cs" />
-     <Compile Include="Assets\Other\Scripts\MainMenu\MenuShipRotation.cs" />
+     <Compile Include="Assets\Other\Scripts\Global\PauseGame.cs" />
+     <Compile Include="Assets\Other\Scripts\Menu\Menu.cs" />
+     <Compile Include="Assets\Other\Scripts\Menu\MenuManager.cs" />
+     <Compile Include="Assets\Other\Scripts\Menu\MenuShipRotation.cs" />
      <Compile Include="Assets\Other\Scripts\Particle\OrbitCamera.cs" />
      <Compile Include="Assets\Other\Scripts\Particle\TestParticles.cs" />
      <Compile Include="Assets\Other\Scripts\Player\DisableInactiveParticles.cs" />
+     <Compile Include="Assets\Other\Scripts\Player\HitHealthShield.cs" />
      <Compile Include="Assets\Other\Scripts\Player\ShipControls.cs" />
      <Compile Include="Assets\Other\Scripts\Player\Shooting.cs" />
      <Compile Include="Assets\Other\Scripts\Space\Asteroid\AsteroidForce.cs" />
@@ -96,7 +99,6 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
-     <None Include="Assets\Models\Prefabs\Enemy\Ko je nekaj notri me pobrisi.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />

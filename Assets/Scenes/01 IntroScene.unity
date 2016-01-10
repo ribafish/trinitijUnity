@@ -568,8 +568,8 @@ MonoBehaviour:
     the planets Hergany and Vespera in a nearby asteroid field, where it has been
     conducting its research. \r\n\r\nDesperate to know what happened to the ship and
     to get it before it falls in the wrong hands, Antaltida has sent out word and
-    reward for anyone who finds it to protect it, until the nearest fleet, on its
-    way, arrives."
+    reward for anyone who finds it to protect it, until the nearest fleet on its way
+    arrives."
 --- !u!222 &1486058883
 CanvasRenderer:
   m_ObjectHideFlags: 0
