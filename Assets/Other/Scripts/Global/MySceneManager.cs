@@ -2,14 +2,15 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour {
+public class MySceneManager : MonoBehaviour
+{
 
-    static SceneManager Instance;
+    static MySceneManager Instance;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
-	    if (Instance != null)
+        if (Instance != null)
         {
             GameObject.Destroy(gameObject);
         }
@@ -18,17 +19,17 @@ public class SceneManager : MonoBehaviour {
             //GameObject.DontDestroyOnLoad(gameObject);
             Instance = this;
         }
-	}
-	
-	public void SwitchToScene (int sceneNum)
+    }
+
+    public void SwitchToScene(int sceneNum)
     {
         //Application.LoadLevel(sceneNum);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneNum);
+        SceneManager.LoadScene(sceneNum);
     }
 
     public void SwitchToScene(string sceneName)
     {
         //Application.LoadLevel(sceneName);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName);
     }
 }

@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using System.Collections;
 
 public class Shooting : MonoBehaviour {
 	public GameObject bullet;
+    public AudioSource shootSound;
 
 	private float shootTime = 0;
 	private ArrayList bulletSources = new ArrayList();
 	// Use this for initialization
 	void Start () {
+
 		shootTime = 0;
 		foreach(Transform child in transform){
 			if (child.tag == "Gun") {
@@ -22,8 +25,10 @@ public class Shooting : MonoBehaviour {
 		//Vector3 target = transform.GetComponentInChildren<Camera> ().ScreenToWorldPoint (Input.mousePosition + Vector3.forward * 300);
 		//Debug.DrawLine (transform.position, target, Color.white);
 
-		if (Input.GetButton ("Fire1") &&  shootTime < 0) {
-			shootTime = 0.2f;
+		if (Input.GetButton ("Fire1") &&  shootTime < 0 ) {
+            shootSound.Play();
+
+            shootTime = 0.2f;
 			foreach (Transform bs in bulletSources) {
 				bs.GetComponent<ParticleSystem> ().Emit (2);
 				/*

@@ -48,6 +48,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &139552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 498106}
+  - 114: {fileID: 11469266}
+  m_Layer: 0
+  m_Name: Pause Game
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &177328
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,7 +72,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 416480}
-  - 114: {fileID: 11482898}
+  - 114: {fileID: 11483614}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -113,8 +129,21 @@ Transform:
   - {fileID: 416480}
   - {fileID: 453108}
   - {fileID: 433748}
+  - {fileID: 498106}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &498106
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 467812}
+  m_RootOrder: 3
 --- !u!114 &11414916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,8 +167,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0376fdf5955c3c84bb21ccbe2e4dfbc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneManager: {fileID: 11482898}
+  sceneManager: {fileID: 11483614}
   globalAudioLevel: {fileID: 11414916}
+  pauseGame: {fileID: 11469266}
+--- !u!114 &11469266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139552}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccb5a55fdb5fa34cb40f9c4fd3706eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11479086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075e6fe507034184a90b4e62f0d74176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11482898
+--- !u!114 &11483614
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -159,7 +200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 177328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f0d7b7e05fa2564597fbe140f171e3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a8346e04e18bfd43a024328c2f05705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &100100000
