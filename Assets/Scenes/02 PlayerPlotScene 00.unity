@@ -264,10 +264,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 11469266, guid: be9f644392941be47999497affad86dc, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be9f644392941be47999497affad86dc, type: 2}
   m_IsPrefabParent: 0
@@ -672,7 +668,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
   m_RootOrder: 8
 --- !u!1001 &1718174996
 Prefab:
@@ -782,6 +777,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f51653440fa0b284283495f4b0dd5e8a, type: 3}
   m_IsPrefabParent: 0
-=======
-  m_RootOrder: 4
->>>>>>> origin/master
