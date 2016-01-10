@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.ImageEffects;
+using UnityEngine.Audio;
 
 public class ShipControls : MonoBehaviour {
 	public float mouseSensibility = 3;
 	public Transform shipCamera;
 	public float thrustMax = 100;
+    [Range(0.2f, 1.0f)] public float engineVolumeMax = 0.5f;
+    public AudioSource engineSound;
 
 	private float thrust = 0;
 	private Quaternion oldRotation;
@@ -23,6 +26,7 @@ public class ShipControls : MonoBehaviour {
 				busters.Add (c.GetComponent<ParticleSystem>());
 			}
 		}
+        engineSound.volume = 0.0f;
 	}
 
     // Update is called once per frame
@@ -31,9 +35,15 @@ public class ShipControls : MonoBehaviour {
         if (!Globals.instance.pauseGame.IsPaused())
         {
             if (Input.GetButton("ThrustUp"))
+            {
                 thrust = Mathf.Clamp01(thrust + 0.01f);
+            }
             if (Input.GetButton("ThrustDown"))
+            {
                 thrust = Mathf.Clamp01(thrust - 0.01f);
+            }
+            engineSound.volume = thrust * engineVolumeMax;
+            engineSound.pitch = thrust / 2 + 0.5f;
 
 
 
