@@ -10,6 +10,10 @@ public class HitHealthShield : MonoBehaviour {
     public Slider shieldSlider;
     public Slider healthSlider;
 
+    public Image hitEffect;
+    public float hitEffectDuration = 1.0f;  // in seconds
+    float hitEffectTime = 0;
+    const float hitAlpha = 0.3f;
 
 
 	// Use this for initialization
@@ -42,6 +46,16 @@ public class HitHealthShield : MonoBehaviour {
             //Debug.Log("health: " + health);
         }
 
+        if (hitEffect.enabled)
+        {
+            if (hitEffectTime <= 0)
+                hitEffect.enabled = false;
+            hitEffectTime -= Time.deltaTime;
+            Color c = hitEffect.color;
+            c.a -= Time.deltaTime * hitAlpha / hitEffectDuration;
+            hitEffect.color = c;
+        }
+
         // TODO: debug only!
         if (Input.GetKeyDown(KeyCode.X))
             Hit(10);
@@ -51,6 +65,12 @@ public class HitHealthShield : MonoBehaviour {
     {
         float shield = shieldSlider.value;
         float health = healthSlider.value;
+
+        hitEffect.enabled = true;
+        Color c = hitEffect.color;
+        c.a = hitAlpha;
+        hitEffect.color = c;
+        hitEffectTime = hitEffectDuration;
 
         shield -= strength;
         if (shield < 0)
