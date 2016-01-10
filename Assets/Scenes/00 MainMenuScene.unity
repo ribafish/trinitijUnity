@@ -2329,7 +2329,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 207218383}
+      - m_Target: {fileID: 1589254888}
         m_MethodName: SwitchToScene
         m_Mode: 5
         m_Arguments:
@@ -2375,12 +2375,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 201113413}
---- !u!114 &207218383 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11482898, guid: be9f644392941be47999497affad86dc,
-    type: 2}
-  m_PrefabInternal: {fileID: 421614918}
-  m_Script: {fileID: 11500000, guid: 5f0d7b7e05fa2564597fbe140f171e3f, type: 3}
 --- !u!1 &215999072
 GameObject:
   m_ObjectHideFlags: 0
@@ -5529,6 +5523,12 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 0b37b54cc958c477dbded8b1d1125a82, type: 3}
   m_PrefabInternal: {fileID: 1548241263}
+--- !u!114 &1589254888 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11483614, guid: be9f644392941be47999497affad86dc,
+    type: 2}
+  m_PrefabInternal: {fileID: 421614918}
+  m_Script: {fileID: 11500000, guid: 7a8346e04e18bfd43a024328c2f05705, type: 3}
 --- !u!1 &1706504437
 GameObject:
   m_ObjectHideFlags: 0

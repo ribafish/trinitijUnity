@@ -25,7 +25,7 @@ public class Shooting : MonoBehaviour {
 		//Vector3 target = transform.GetComponentInChildren<Camera> ().ScreenToWorldPoint (Input.mousePosition + Vector3.forward * 300);
 		//Debug.DrawLine (transform.position, target, Color.white);
 
-		if (Input.GetButton ("Fire1") &&  shootTime < 0 ) {
+		if (Input.GetButton ("Fire1") &&  shootTime < 0 && !Globals.instance.pauseGame.IsPaused() ) {
             shootSound.Play();
 
             shootTime = 0.2f;

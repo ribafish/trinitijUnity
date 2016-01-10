@@ -7,7 +7,8 @@ public class MenuManager : MonoBehaviour
 
     public void Start()
     {
-        ShowMenu(CurrentMenu);
+        if (CurrentMenu != null)
+            ShowMenu(CurrentMenu);
     }
 
     public void ShowMenu(Menu menu)
@@ -18,6 +19,10 @@ public class MenuManager : MonoBehaviour
         CurrentMenu = menu;
         CurrentMenu.IsOpen = true;
     }
-	
+	public void closeCurrentMenu()
+    {
+        if (CurrentMenu != null)
+            CurrentMenu.IsOpen = false;
+    }
 }
 

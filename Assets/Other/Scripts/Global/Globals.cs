@@ -8,7 +8,8 @@ public class Globals : MonoBehaviour {
 
     public MySceneManager sceneManager;
     public GlobalAudioLevel globalAudioLevel;
-    public Pause pauseGame;
+    public PauseGame pauseGame;
+    public MenuManager menuManager;
 
 	// Use this for initialization
 	void Start ()

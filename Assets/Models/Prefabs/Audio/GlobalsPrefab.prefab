@@ -56,7 +56,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 498106}
-  - 114: {fileID: 11469266}
+  - 114: {fileID: 11482916}
   m_Layer: 0
   m_Name: Pause Game
   m_TagString: Untagged
@@ -169,18 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneManager: {fileID: 11483614}
   globalAudioLevel: {fileID: 11414916}
-  pauseGame: {fileID: 11469266}
---- !u!114 &11469266
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 139552}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ccb5a55fdb5fa34cb40f9c4fd3706eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  pauseGame: {fileID: 11482916}
 --- !u!114 &11479086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,6 +179,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 075e6fe507034184a90b4e62f0d74176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11482916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139552}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c82b5f1f6bf12a743b992d2f5ad4ce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11483614
