@@ -15,7 +15,7 @@ public class SceneManager : MonoBehaviour {
         }
         else
         {
-            GameObject.DontDestroyOnLoad(gameObject);
+            //GameObject.DontDestroyOnLoad(gameObject);
             Instance = this;
         }
 	}

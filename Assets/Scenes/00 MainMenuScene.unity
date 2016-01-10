@@ -751,7 +751,7 @@ ParticleSystem:
   speed: 1
   randomSeed: 0
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   moveWithTransform: 1
   scalingMode: 2
@@ -1044,7 +1044,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 5000
+    maxNumParticles: 50000
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -6083,26 +6083,27 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 15
+    m_MinSize: 10
     m_MaxSize: 30
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Programmed by:
+  m_Text: 'Programmed & Designed by:
 
-    Nikolaj Janko
-
-    Jan Bostjancic
-
-    Gasper Kojek
+    Nikolaj Janko, Jan Bostjancic, Gasper Kojek
 
 
     3D Models:
 
     Robert Nemec
+
+
+    Music:
+
+    Kevin MacLeod (incompetech.com)
 
 '
 --- !u!222 &1863269453
@@ -6203,7 +6204,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1956111842}
   m_LocalRotation: {x: -0.021044493, y: 0.90606326, z: -0.0098132165, w: -0.42250463}
-  m_LocalPosition: {x: 0, y: 0, z: 133.1}
+  m_LocalPosition: {x: 0, y: 0, z: 125}
   m_LocalScale: {x: 48.112526, y: 48.112522, z: 48.112522}
   m_Children:
   - {fileID: 558860835}
@@ -6212,7 +6213,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32.9, y: -15}
+  m_AnchoredPosition: {x: 48, y: -48}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1956111844

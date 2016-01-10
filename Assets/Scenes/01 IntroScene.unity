@@ -462,16 +462,17 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1012953761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -79}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2108457260}
   - {fileID: 1598746453}
   - {fileID: 1486058881}
   m_Father: {fileID: 272209565}
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 25}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1012953763
@@ -485,10 +486,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382ca6221d30c8e4b898e59768d377ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  production: {fileID: 2108457261}
   header: {fileID: 1598746453}
   text: {fileID: 1486058881}
-  speed: 10
-  distance: 30
+  introSound: {fileID: 1918081188}
+  soundBeginHeader: 14
+  soundBeginText: 35
+  speed: 30
 --- !u!1 &1486058880
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,15 +517,15 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1486058880}
   m_LocalRotation: {x: 0.5372997, y: 0, z: 0, w: 0.8433914}
-  m_LocalPosition: {x: 0, y: 0, z: -910}
+  m_LocalPosition: {x: 0, y: 0, z: -334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1012953762}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -623}
-  m_SizeDelta: {x: 500, y: 1000}
+  m_AnchoredPosition: {x: 0, y: -286}
+  m_SizeDelta: {x: 300, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1486058882
 MonoBehaviour:
@@ -544,28 +548,28 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 36
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_FontSize: 24
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 30
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\rTesting, testing, testing, testing testing...\nLorem ipsum dolor sit
-    amet, consectetur adipiscing elit. Nulla a velit quis neque mattis tincidunt.
-    Cras mollis pulvinar felis. Donec vel metus nunc. Aliquam eu tincidunt lectus,
-    non suscipit turpis. Sed rutrum interdum nisi. Pellentesque blandit magna nec
-    auctor interdum. Aenean eu molestie nisl. Suspendisse rutrum vitae ex eget scelerisque.\r\n\r\nSed
-    sed tellus ex. Cras imperdiet sapien eget hendrerit laoreet. Mauris ac dolor ante.
-    Donec bibendum dapibus aliquam. Suspendisse in porta eros. Morbi sit amet tellus
-    id magna fermentum suscipit. Mauris tempus facilisis semper. Integer lectus arcu,
-    aliquet vitae tellus sed, laoreet pretium metus. Donec eu ipsum at dolor euismod
-    suscipit nec et metus.\r\n\r\nSed scelerisque lectus ut lorem pretium, in sagittis
-    sapien blandit. Fusce malesuada diam enim, a aliquam nibh pellentesque ac."
+  m_Text: "Danger is arising in Reja galaxy as one of the stronger factions Antlatida
+    tries to maintain ballance. Acting as a diplomat, due to the recent disputes between
+    leading factions Fango Harpa and Voltareliji, is becoming increasingly hard, as
+    smaller rouge factions, such as Hepto Tauntrum, have been ambushing Alntaltidas
+    ships.\r\n\r\nNow one of its important research ships, Trinity, has gone missing.
+    Its last transmission came from the nearest star system Palatoks, somewhere between
+    the planets Hergany and Vespera in a nearby asteroid field, where it has been
+    conducting its research. \r\n\r\nDesperate to know what happened to the ship and
+    to get it before it falls in the wrong hands, Antaltida has sent out word and
+    reward for anyone who finds it to protect it, until the nearest fleet, on its
+    way, arrives."
 --- !u!222 &1486058883
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -636,15 +640,15 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1598746450}
-  m_LocalRotation: {x: 0.5372997, y: 0, z: 0, w: 0.8433914}
-  m_LocalPosition: {x: 0, y: 0, z: -33}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1012953762}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -216}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1918081187
@@ -673,11 +677,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24369522, guid: 12e1a7310800fa7448e59e456b4f23e1,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d76dea6b896340f4ca7121469748f586, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -726,7 +730,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -745,8 +749,83 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1918081187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -48, y: -2.703125, z: -1596}
+  m_LocalPosition: {x: 0, y: 0, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!1 &2108457259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 2108457260}
+  - 222: {fileID: 2108457262}
+  - 114: {fileID: 2108457261}
+  m_Layer: 5
+  m_Name: Production
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2108457260
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108457259}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 150}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1012953762}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2108457261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108457259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 28
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'Skupina NeJaKoBo
+
+    presents'
+--- !u!222 &2108457262
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108457259}
