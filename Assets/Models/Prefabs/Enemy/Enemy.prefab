@@ -12,8 +12,8 @@ GameObject:
   - 23: {fileID: 2376954}
   - 54: {fileID: 5409888}
   - 64: {fileID: 6448036}
-  - 75: {fileID: 7543232}
   - 114: {fileID: 11494074}
+  - 114: {fileID: 11410752}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -27,8 +27,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156916}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: -420, y: 1.6, z: 63.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,17 +93,19 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 203fc917a99f41d42b556b8fd5a3906a, type: 3}
---- !u!75 &7543232
-ConstantForce:
+--- !u!114 &11410752
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156916}
   m_Enabled: 1
-  m_Force: {x: 0, y: 0, z: 0}
-  m_RelativeForce: {x: 30, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301ad6b15b5774f7bb62ee09926c80b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  maxSpeed: 50
 --- !u!114 &11494074
 MonoBehaviour:
   m_ObjectHideFlags: 1
