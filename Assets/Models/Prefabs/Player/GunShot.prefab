@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.65, y: 0.8050051, z: 4.82}
+  m_LocalPosition: {x: -2.65, y: 0.131, z: 4.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 456800}
@@ -2300,16 +2300,16 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 1
     z:
-      scalar: 200
+      scalar: 10000
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0.0036900365
-          value: 1
+        - time: 0.03260869
+          value: 0.96039605
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 0.051660508
+        - time: 0.11687791
           value: 0.00000029802322
           inSlope: 0
           outSlope: 0
@@ -2336,10 +2336,10 @@ ParticleSystem:
       minMaxState: 1
     inWorldSpace: 0
   InheritVelocityModule:
-    enabled: 0
-    m_Mode: 0
+    enabled: 1
+    m_Mode: 1
     m_Curve:
-      scalar: 1
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2436,7 +2436,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 1
     z:
-      scalar: 5000
+      scalar: 30000
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2445,8 +2445,8 @@ ParticleSystem:
           inSlope: -8.877889
           outSlope: -8.877889
           tangentMode: 0
-        - time: 0.031412642
-          value: 0
+        - time: 0.1654706
+          value: 0.05940594
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -2988,7 +2988,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   SubModule:
