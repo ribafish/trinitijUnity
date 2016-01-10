@@ -19,7 +19,6 @@ public class EnemyHealth : MonoBehaviour {
 
 	void OnParticleCollision(GameObject other) {
 		//Rigidbody body = other.GetComponent<Rigidbody>();
-		Debug.Log ("Collided");
 		GameObject obj = Instantiate (destructEnemy, transform.position, transform.rotation) as GameObject;
 
 		GameObject expl = Instantiate (explosion, transform.position, transform.rotation) as GameObject;
