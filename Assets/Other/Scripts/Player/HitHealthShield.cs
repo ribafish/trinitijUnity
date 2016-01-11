@@ -79,15 +79,26 @@ public class HitHealthShield : MonoBehaviour {
             // TODO: player dies
             Debug.Log("Player dies!");
         }
-        
-        if (health != healthSlider.value)
+
+        if (shield != shieldSlider.value)
+        {
+            hitEffect.enabled = true;
+            Color c = Color.green;
+            if (health != healthSlider.value)
+                c = Color.red;
+            c.a = hitAlpha;
+            hitEffect.color = c;
+            hitEffectTime = hitEffectDuration;
+        }
+
+        /*if (health != healthSlider.value)
         {
             hitEffect.enabled = true;
             Color c = hitEffect.color;
             c.a = hitAlpha;
             hitEffect.color = c;
             hitEffectTime = hitEffectDuration;
-        }
+        }*/
 
         shieldSlider.value = shield;
         healthSlider.value = health;

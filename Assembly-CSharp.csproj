@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DebugLog.cs" />
+     <Compile Include="Assets\Models\Prefabs\Enemy\DelayDestroy.cs" />
+     <Compile Include="Assets\Models\Prefabs\Enemy\EnemyAI.cs" />
      <Compile Include="Assets\Models\Prefabs\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Other\Scripts\Camera\AbstractTargetFollower.cs" />
      <Compile Include="Assets\Other\Scripts\Camera\AutoCam.cs" />
