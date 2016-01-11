@@ -43,7 +43,7 @@ public class ShipControls : MonoBehaviour {
                 thrust = Mathf.Clamp01(thrust - 0.01f);
             }
             engineSound.volume = thrust * engineVolumeMax;
-            engineSound.pitch = thrust / 2 + 0.5f;
+            engineSound.pitch = thrust + 0.4f;
 
 
 
