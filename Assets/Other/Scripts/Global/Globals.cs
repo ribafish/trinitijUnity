@@ -14,7 +14,7 @@ public class Globals : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         if (instance == null)
         {

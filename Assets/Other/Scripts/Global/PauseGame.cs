@@ -10,7 +10,7 @@ public class PauseGame : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         if (instance == null)
         {

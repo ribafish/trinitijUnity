@@ -23,6 +23,9 @@ public class ShipControls : MonoBehaviour {
 	private float oldMouseAngle = 0f;
 	private float speedPercent = 0f;
 
+
+    private HitHealthShield igralecZivljenja;
+
 	// Use this for initialization
 	void Start () {
 		cameraPosDiff = shipCamera.position - transform.position;
@@ -33,6 +36,9 @@ public class ShipControls : MonoBehaviour {
 			}
 		}
         engineSound.volume = 0.0f;
+
+        //nalozimo skripto, ki omogoca streljanje na igralca
+        igralecZivljenja = GameObject.Find("HealthShieldBars").GetComponent<HitHealthShield>();
 	}
 
     // Update is called once per frame
@@ -103,7 +109,7 @@ public class ShipControls : MonoBehaviour {
             //Debug.Log (transform.forward*200);
 
             // Generate a ray from the cursor position
-			Debug.Log(Input.GetAxis ("Horizontal"));
+			//Debug.Log(Input.GetAxis ("Horizontal"));
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition + new Vector3(Input.GetAxis ("Horizontal")*Screen.width,Input.GetAxis ("Vertical")*Screen.height));
             
 
@@ -151,4 +157,13 @@ public class ShipControls : MonoBehaviour {
 		shipCamera.position = transform.TransformPoint (cameraPosDiff + cameraDistance + cameraNoise);
 		//shipCamera.position = Vector3.Slerp(shipCamera.position, transform.position, 0.5f);
 	}
+
+    void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Player hit: " + other.gameObject.name);
+        if(other.gameObject.name.Contains("Meteorid_"))
+        {
+            igralecZivljenja.Hit(50);
+        }
+    }
 }

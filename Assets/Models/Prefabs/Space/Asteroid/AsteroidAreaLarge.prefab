@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 432308}
   - 114: {fileID: 11466138}
   m_Layer: 0
-  m_Name: AsteroidArea
+  m_Name: AsteroidAreaLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,12 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c2dea404ceece468a955b8c63774be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaSize: 2000
+  areaSize: 4000
   asteroids:
   - {fileID: 165878, guid: 94e31424939f0a84287b901ea6fdf2fa, type: 2}
   - {fileID: 129446, guid: 0ad8d0aadfb41b946b50ace83a4fa0eb, type: 2}
   - {fileID: 181326, guid: 20e27126f3dc46140b0d5b3940c43a9c, type: 2}
-  asteroidsAmount: c8000000c800000064000000
+  asteroidsAmount: 640000006400000032000000
   asteroidsSizeRange:
   - {x: 10, y: 50}
   - {x: 5, y: 35}
@@ -60,6 +60,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: asteroidsAmount.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: asteroidsAmount.Array.data[1]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: asteroidsAmount.Array.data[2]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: areaSize
+      value: 4000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
