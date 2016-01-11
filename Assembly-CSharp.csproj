@@ -72,7 +72,9 @@
      <Compile Include="Assets\Other\Scripts\Player\HitHealthShield.cs" />
      <Compile Include="Assets\Other\Scripts\Player\ShipControls.cs" />
      <Compile Include="Assets\Other\Scripts\Player\Shooting.cs" />
+     <Compile Include="Assets\Other\Scripts\Space\Asteroid\AsteroidCreator.cs" />
      <Compile Include="Assets\Other\Scripts\Space\Asteroid\AsteroidForce.cs" />
+     <Compile Include="Assets\Other\Scripts\Space\Asteroid\AsteroidInitiate.cs" />
      <Compile Include="Assets\Other\Scripts\Space\Planet\Rotation.cs" />
      <Compile Include="Assets\Other\Scripts\UI\IntroControl.cs" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
@@ -142,7 +144,6 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
-     <None Include="Assets\Models\Prefabs\Space\Asteroid\Ko je nekaj notri me pobrisi.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
