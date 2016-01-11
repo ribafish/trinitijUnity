@@ -3,13 +3,16 @@ using System.Collections;
 using UnityStandardAssets.ImageEffects;
 using UnityEngine.Audio;
 
-public class ShipControls : MonoBehaviour {
+public class ShipControls : MonoBehaviour,Damage{
 	public float mouseSensibility = 3;
 	public Transform shipCamera;
 	public float thrustMax = 100;
     [Range(0.2f, 1.0f)] public float engineVolumeMax = 0.5f;
     public AudioSource engineSound;
 	[Range(10, 45)] public int maxLeanAngle = 40;
+	public GameObject sparkles;
+	public GameObject healthGUI;
+	public GameObject explosion;
 
 	private float thrust = 0;
 	private Quaternion oldRotation;
@@ -151,13 +154,14 @@ public class ShipControls : MonoBehaviour {
 
         }
     }
-	Vector3 followerVelocity;
+
 	void LateUpdate(){
 		Vector3 cameraNoise = new Vector3 (Mathf.PerlinNoise(Time.time*10,0),Mathf.PerlinNoise(Time.time*10,0)) * speedPercent;
 		shipCamera.position = transform.TransformPoint (cameraPosDiff + cameraDistance + cameraNoise);
 		//shipCamera.position = Vector3.Slerp(shipCamera.position, transform.position, 0.5f);
 	}
 
+<<<<<<< HEAD
     void OnCollisionEnter(Collision other)
     {
         Debug.Log("Player hit: " + other.gameObject.name);
@@ -166,4 +170,30 @@ public class ShipControls : MonoBehaviour {
             igralecZivljenja.Hit(50);
         }
     }
+=======
+	void OnCollisionEnter (Collision col)
+	{
+		GameObject spark = Instantiate (sparkles, col.contacts [0].point, Quaternion.identity) as GameObject;
+		spark.GetComponent<ParticleSystem> ().Play ();
+		Destroy (spark, 2f);
+		if(healthGUI!=null)
+			healthGUI.GetComponentInChildren<HitHealthShield> ().Hit ((int)col.impulse.magnitude*5);
+		//Hit ((int)col.impulse.sqrMagnitude);
+		/*if(col.gameObject.name == "prop_powerCube")
+		{
+			Destroy(col.gameObject);
+		}*/
+	}
+	public void kill(){
+		GameObject expl = Instantiate (explosion, transform.position, transform.rotation) as GameObject;
+		expl.GetComponent<ParticleSystem> ().Play ();
+		Destroy (expl, 5f);
+		Destroy (gameObject);
+	}
+
+	public void applayDamage(int amount){
+		if(healthGUI!=null)
+			healthGUI.GetComponentInChildren<HitHealthShield> ().Hit (amount);
+	}
+>>>>>>> origin/master
 }

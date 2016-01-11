@@ -77,7 +77,8 @@ public class HitHealthShield : MonoBehaviour {
         {
             health = 0;
             // TODO: player dies
-            Debug.Log("Player dies!");
+			GameObject player = GameObject.FindGameObjectWithTag("Player");
+			player.GetComponentInChildren<ShipControls> ().kill ();
         }
 
         if (shield != shieldSlider.value)
