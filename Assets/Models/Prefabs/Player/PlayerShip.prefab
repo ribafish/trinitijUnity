@@ -63,7 +63,7 @@ GameObject:
   - 4: {fileID: 497796}
   m_Layer: 0
   m_Name: PlayerShip
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -507,7 +507,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 943dab12b41267c47bc0e0d9711f4c0d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.504
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -558,7 +558,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -669,6 +669,9 @@ MonoBehaviour:
   engineVolumeMax: 0.5
   engineSound: {fileID: 8206180}
   maxLeanAngle: 20
+  sparkles: {fileID: 122238, guid: c606205380b2347aeb6a5b2c7ac7c064, type: 2}
+  healthGUI: {fileID: 0}
+  explosion: {fileID: 100008, guid: c466276509f8b40a59f02d115254fc25, type: 2}
 --- !u!114 &11412398
 MonoBehaviour:
   m_ObjectHideFlags: 1
