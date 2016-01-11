@@ -55,7 +55,7 @@ public class ShipControls : MonoBehaviour {
 			transform.position += transform.right * horizontalmove;
 
             engineSound.volume = thrust * engineVolumeMax;
-            engineSound.pitch = thrust / 2 + 0.5f;
+            engineSound.pitch = thrust + 0.4f;
 
 
 			// Thrust force
