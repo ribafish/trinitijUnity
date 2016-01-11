@@ -24,6 +24,12 @@ public class EnemyHealth : MonoBehaviour {
 		GameObject expl = Instantiate (explosion, transform.position, transform.rotation) as GameObject;
 		expl.GetComponent<ParticleSystem> ().Play ();
 
+		// Explosion force
+		Collider[] hitColliders = Physics.OverlapSphere(transform.position, 200);
+		foreach (Collider c in hitColliders) {
+			c.attachedRigidbody.AddForce ((c.attachedRigidbody.position-transform.position)*Vector3.Distance(c.attachedRigidbody.position,transform.position)/200f, ForceMode.Impulse);
+		}
+
 		foreach(Rigidbody rb in obj.GetComponentsInChildren<Rigidbody>()){
 			rb.velocity = rigidbody.velocity;
 			rb.angularVelocity = rigidbody.angularVelocity;

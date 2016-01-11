@@ -9,17 +9,23 @@ public class ShipControls : MonoBehaviour {
 	public float thrustMax = 100;
     [Range(0.2f, 1.0f)] public float engineVolumeMax = 0.5f;
     public AudioSource engineSound;
+	[Range(10, 45)] public int maxLeanAngle = 40;
 
 	private float thrust = 0;
 	private Quaternion oldRotation;
-	private Vector3 oldPosition;
+	private Vector3 cameraPosDiff;
+	private Vector3 cameraDistance = new Vector3 (0, 0, 0);
 	private Rigidbody rigidBody;
 	private ArrayList busters = new ArrayList ();
+	private float horizontalmove=0f;
+	private float oldhorizontalmove=0f;
+	private float mouseAngle = 0f;
+	private float oldMouseAngle = 0f;
+	private float speedPercent = 0f;
 
 	// Use this for initialization
 	void Start () {
-		oldRotation = shipCamera.localRotation;
-		oldPosition = shipCamera.localPosition;
+		cameraPosDiff = shipCamera.position - transform.position;
 		rigidBody = transform.GetComponent<Rigidbody> ();
 		foreach (Transform c in transform) {
 			if (c.tag == "Buster") {
@@ -34,50 +40,72 @@ public class ShipControls : MonoBehaviour {
     {
         if (!Globals.instance.pauseGame.IsPaused())
         {
-            if (Input.GetButton("ThrustUp"))
-            {
-                thrust = Mathf.Clamp01(thrust + 0.01f);
-            }
-            if (Input.GetButton("ThrustDown"))
-            {
-                thrust = Mathf.Clamp01(thrust - 0.01f);
-            }
+			
+			Vector3 speed = transform.InverseTransformDirection(rigidBody.velocity);
+			speedPercent = (speed.z / thrustMax);
+
+
+			thrust = Mathf.Clamp01(thrust + Input.GetAxis ("Thrust")/100f);
+
+
+
+			oldhorizontalmove = horizontalmove;
+			horizontalmove = Mathf.LerpAngle (horizontalmove, Input.GetAxis ("Lean"), Time.deltaTime * 5);
+			// Move ship horizontally
+			transform.position += transform.right * horizontalmove;
+
             engineSound.volume = thrust * engineVolumeMax;
             engineSound.pitch = thrust / 2 + 0.5f;
 
 
-
-            rigidBody.AddRelativeForce(Vector3.forward * thrustMax * thrust);
-            Vector3 speed = transform.InverseTransformDirection(rigidBody.velocity);
+			// Thrust force
+			rigidBody.AddRelativeForce(Vector3.forward * thrustMax * thrust);
+            
 
             /* CAMERA EFECTS */
-            float speedPercent = (speed.z / thrustMax);
-            shipCamera.localPosition = Vector3.Lerp(shipCamera.localPosition, oldPosition + new Vector3(0, 0, -10 * speedPercent), 2);
-
-            shipCamera.localPosition += new Vector3(Mathf.PerlinNoise(transform.localPosition.z / thrustMax * 10, 0) * speedPercent, Mathf.PerlinNoise(transform.localPosition.z / thrustMax * 10, 20) * speedPercent, 0);
+           
 
 
-            foreach (ParticleSystem ps in busters)
-            {
-                ps.Emit((int)(10 * thrust));
-                //ps.startSpeed = 30 * thrust;
-            }
+			// Ship rotation on horizontal move
+			shipCamera.rotation = Quaternion.LookRotation (transform.forward, Quaternion.AngleAxis (oldhorizontalmove*maxLeanAngle + oldMouseAngle, transform.forward) * transform.up);
+			transform.rotation = Quaternion.LookRotation (transform.forward, Quaternion.AngleAxis (-horizontalmove*maxLeanAngle - mouseAngle, transform.forward) * shipCamera.transform.up);
+
+
+
+
+			//shipCamera.position = transform.position + cameraPosDiff;
+			//shipCamera.LookAt (transform.position);
+
+			// Speed distance
+			cameraDistance = Vector3.Lerp(cameraDistance, new Vector3(0, 0, -20 * speedPercent), 2);
+
+			//transform.position += new Vector3(Mathf.PerlinNoise(transform.position.z / thrustMax * 10, 0) * speedPercent, Mathf.PerlinNoise(transform.position.z / thrustMax * 10, 20) * speedPercent, 0);
 
             VignetteAndChromaticAberration vcm = shipCamera.GetComponent<VignetteAndChromaticAberration>();
-            NoiseAndScratches nsc = shipCamera.GetComponent<NoiseAndScratches>();
             vcm.intensity = 10 * speedPercent;
             vcm.blur = 2 * speedPercent;
-            nsc.grainIntensityMax = speedPercent * 0.2f;
-            nsc.scratchIntensityMax = speedPercent * 0.2f;
-            // Camera effects
+            //////////////////////////////////////////////////
+			/// 
+
+			////////////////
+			/// THRUSTERS///
+			/// ////////////
+
+			foreach (ParticleSystem ps in busters)
+			{
+				ps.Emit((int)(10 * thrust));
+				ps.startSpeed = 2 * thrust;
+			}
 
 
             // Generate a plane that intersects the transform's position with an 
-            Plane playerPlane = new Plane(transform.forward, transform.position + transform.forward * 50);
+			Plane playerPlane = new Plane(transform.forward, transform.position + transform.forward * 50);
             //Debug.Log (transform.forward*200);
 
             // Generate a ray from the cursor position
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			Debug.Log(Input.GetAxis ("Horizontal"));
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition + new Vector3(Input.GetAxis ("Horizontal")*Screen.width,Input.GetAxis ("Vertical")*Screen.height));
+            
 
             // Determine the point where the cursor ray intersects the plane.
             // This will be the point that the object must look towards to be looking at the mouse.
@@ -105,13 +133,22 @@ public class ShipControls : MonoBehaviour {
                 //Debug.Log (Vector3.Angle(targetPoint - transform.position,transform.forward));
 
                 Quaternion rotDirection = Quaternion.Inverse(transform.rotation) * targetRotation;
-
+				oldMouseAngle = mouseAngle;
+				mouseAngle = Mathf.LerpAngle (mouseAngle, rotDirection.eulerAngles.y * 10, Time.deltaTime*5);
+				
                 // Smoothly rotate towards
                 transform.rotation = targetRotation;
-                shipCamera.localRotation = Quaternion.Slerp(shipCamera.localRotation, Quaternion.Euler(oldRotation.eulerAngles.x + rotDirection.eulerAngles.x, oldRotation.eulerAngles.y, oldRotation.eulerAngles.z + rotDirection.eulerAngles.y * 4), 1);
+				//shipCamera.rotation = Quaternion.Slerp(shipCamera.rotation, Quaternion.AngleAxis(rotDirection.eulerAngles.z, shipCamera.right), 1);
 
 
             }
+
         }
     }
+	Vector3 followerVelocity;
+	void LateUpdate(){
+		Vector3 cameraNoise = new Vector3 (Mathf.PerlinNoise(Time.time*10,0),Mathf.PerlinNoise(Time.time*10,0)) * speedPercent;
+		shipCamera.position = transform.TransformPoint (cameraPosDiff + cameraDistance + cameraNoise);
+		//shipCamera.position = Vector3.Slerp(shipCamera.position, transform.position, 0.5f);
+	}
 }

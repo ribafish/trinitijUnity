@@ -13,7 +13,7 @@ GameObject:
   - 54: {fileID: 5409888}
   - 64: {fileID: 6448036}
   - 114: {fileID: 11494074}
-  - 114: {fileID: 11410752}
+  - 114: {fileID: 11489132}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -93,7 +93,7 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 203fc917a99f41d42b556b8fd5a3906a, type: 3}
---- !u!114 &11410752
+--- !u!114 &11489132
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  maxSpeed: 50
+  maxSpeed: 20
 --- !u!114 &11494074
 MonoBehaviour:
   m_ObjectHideFlags: 1
