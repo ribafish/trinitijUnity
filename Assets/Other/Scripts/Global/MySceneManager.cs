@@ -32,4 +32,20 @@ public class MySceneManager : MonoBehaviour
         //Application.LoadLevel(sceneName);
         SceneManager.LoadScene(sceneName);
     }
+
+    public void SwitchToNext()
+    {
+        int idx = GetCurSceneIndex() + 1;
+        SceneManager.LoadScene(idx);
+    }
+
+    public int GetCurSceneIndex()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public void ReloadCurrent()
+    {
+        SceneManager.LoadScene(GetCurSceneIndex());
+    }
 }

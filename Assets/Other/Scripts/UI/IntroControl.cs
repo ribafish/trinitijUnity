@@ -115,8 +115,10 @@ public class IntroControl : MonoBehaviour {
         }
         else
         {
-            Scene currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-            UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene.buildIndex + 2);
+            //Scene currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+            //UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene.buildIndex + 2);
+            int curIdx = Globals.instance.sceneManager.GetCurSceneIndex();
+            Globals.instance.sceneManager.SwitchToScene(curIdx + 2);
         }
 	}
 

@@ -13,7 +13,7 @@ public class Explosion : MonoBehaviour {
 			Damage d = c.GetComponent<Damage> ();
 			// TODO: Add wait of distance
 			if (d != null)
-				d.applayDamage ((int)(force*40));
+				d.applayDamage ((int)(force*30));
 		}
 	}
 	
