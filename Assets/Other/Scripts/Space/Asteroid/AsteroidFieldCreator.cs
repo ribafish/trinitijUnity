@@ -36,6 +36,7 @@ public class AsteroidFieldCreator : MonoBehaviour {
                     asteroid.transform.position = transform.position + randomPosition;
                     asteroid.transform.rotation = Random.rotation;
                     asteroid.transform.localScale = Vector3.one * Random.Range(minSize, maxSize);
+                    asteroid.transform.parent = transform;
                 }
             }
         }

@@ -41,6 +41,7 @@ public class AsteroidPusher : MonoBehaviour {
                     GameObject asteroid = Instantiate<GameObject>(asteroids[i]);
                     asteroid.transform.position = transform.position + randomPosition;
                     asteroid.transform.localScale = Vector3.one * Random.Range(minSize, maxSize);
+                    asteroid.transform.parent = transform;
                     asteroid.GetComponent<AsteroidInitiate>().setOverTimeDestroy(playerObj.transform.position.z);
                     asteroid.name = "PUSHER";
                 }
