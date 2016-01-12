@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3348648}
   - 23: {fileID: 2362394}
   - 136: {fileID: 13685884}
+  - 64: {fileID: 6499172}
   m_Layer: 0
   m_Name: Meteorid_3
   m_TagString: Untagged
@@ -91,7 +92,19 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104336}
-  m_Mesh: {fileID: 4300000, guid: 3b31a23aa7e396f488630b8e7ff735c1, type: 3}
+  m_Mesh: {fileID: 4300000, guid: ebcc9cb711fdfcd4f9c3f45a65f1e0c9, type: 3}
+--- !u!64 &6499172
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: ebcc9cb711fdfcd4f9c3f45a65f1e0c9, type: 3}
 --- !u!114 &11468368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +126,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 104336}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 1.3869357
   m_Height: 5.145548
   m_Direction: 1
@@ -144,7 +157,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4300000, guid: e99d688e213a93741b56fbf5852c855d, type: 3}
+      objectReference: {fileID: 4300000, guid: ebcc9cb711fdfcd4f9c3f45a65f1e0c9, type: 3}
     - target: {fileID: 0}
       propertyPath: m_Mass
       value: 1
@@ -159,7 +172,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AngularDrag
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
