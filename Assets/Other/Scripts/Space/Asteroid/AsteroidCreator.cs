@@ -38,6 +38,7 @@ public class AsteroidCreator : MonoBehaviour
                     }
 
                     GameObject asteroid = Instantiate<GameObject>(asteroids[i]);
+                    asteroid.transform.parent = transform;
                     asteroid.transform.position = transform.position + randomPosition;
                     asteroid.transform.rotation = Random.rotation;
                     asteroid.transform.localScale = Vector3.one * Random.Range(minSize, maxSize);
