@@ -9,10 +9,12 @@ public class EnemyAI : MonoBehaviour {
 	private Rigidbody rigidbody;
     private HitHealthShield igralecZivljenja;
 	private ArrayList bulletSources = new ArrayList();
+	private Vector3 hitvec;
 
 	// Use this for initialization
 	void Start () {
 		rigidbody = GetComponent<Rigidbody> ();
+		hitvec = Vector3.zero;
 
         //nalozimo skripto, ki omogoca streljanje na igralca
         igralecZivljenja = GameObject.Find("HealthShieldBars").GetComponent<HitHealthShield>();
@@ -31,30 +33,67 @@ public class EnemyAI : MonoBehaviour {
 		//transform.rotation
 		//Quaternion targetRot = Quaternion.LookRotation(target.position - transform.position, Vector3.up);
 		RaycastHit hit;
+		bool hitRotation = false;
+
 		//Quaternion targetRot = Quaternion.LookRotation (transform.forward, Vector3.up);
-		if (Physics.Raycast (transform.position, transform.forward, out hit, 2000)) {
+
+		 
+
+
+		//hitvec = Vector3.zero;
+		/*Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1000);
+		foreach (Collider c in hitColliders) {
+			if (c.attachedRigidbody.gameObject.tag != "Player") {
+				//Vector3 rigforce = (transform.position - c.attachedRigidbody.position)/1000;
+				Vector3 rigforce = (new Vector3 (1000, 1000, 1000) - (transform.position - c.attachedRigidbody.position))/100 * c.bounds.size.magnitude/200;
+				Debug.Log (c.bounds.size.magnitude);
+				hitvec += rigforce * Time.deltaTime;
+			}
+			hitvec /= hitColliders.Length;
+		}*/
+
+		float raydist = 120;
+		
+		if (Physics.SphereCast(transform.position, 20, transform.forward, out hit, raydist)) {
 			if (hit.rigidbody.gameObject.tag == "Player") {
 				shoot ();
 			} else {
 				Debug.Log ("Hit rotation");
-				Quaternion targetRot = Quaternion.LookRotation (transform.right, Vector3.up);
-				transform.rotation = Quaternion.Slerp (transform.rotation, targetRot, Time.deltaTime * speed * hit.distance/2000);
+				//hitvec = (new Vector3 (1000, 1000, 1000) - (transform.position - hit.point));
+				hitvec += (new Vector3 (raydist, raydist, raydist) - (transform.position - hit.point))/5;
 			}
 			//igralecZivljenja.Hit(1);    //ustreli gralca (trenutno vsak frame, bolje dati timeout)
 		}
 
+		//if (Physics.Raycast (transform.position, transform.forward, out hit, 1000)) {
+		/*
+		if (Physics.Raycast (transform.position, transform.forward, out hit, 1000)) {
+			if (hit.rigidbody.gameObject.tag == "Player") {
+				shoot ();
+			} else {
+				Debug.Log ("Hit rotation");
+				//hitvec = (new Vector3 (1000, 1000, 1000) - (transform.position - hit.point));
+				hitvec += (new Vector3 (1000, 1000, 1000) - (transform.position - hit.point))/50;
+			}
+			//igralecZivljenja.Hit(1);    //ustreli gralca (trenutno vsak frame, bolje dati timeout)
+		}
+		*/
+		speed = Mathf.Clamp (Mathf.Log10 (hitvec.magnitude), 0.5f, 1f);
+
+		//if (!hitRotation) {
 		float distance = Vector3.Distance (target.position, transform.position);
-		speed = Mathf.Clamp01 (distance / 200f);
+		//speed = Mathf.Clamp01 (distance / 200f);
+		Vector3 targetVec = (target.position - transform.position).normalized * Mathf.Clamp(1000 - Vector3.Distance(target.position, transform.position), 2, 200);
 
-		Quaternion targetRotTarg = Quaternion.LookRotation (target.position - transform.position, Vector3.up);
+		Quaternion targetRotTarg = Quaternion.LookRotation (hitvec + targetVec, Vector3.up);
+		hitvec = hitvec / 1.05f;
+		Debug.Log (hitvec.magnitude);
+		if (distance < 50 || Vector3.Angle((target.position - transform.position), transform.forward) < 3)
+				shoot ();
 
+		transform.rotation = Quaternion.Slerp (transform.rotation, targetRotTarg, Time.deltaTime * speed + 0.2f);
 
-		if (distance < 50 || Quaternion.Angle(targetRotTarg, transform.rotation) < 3)
-			shoot ();
-
-		transform.rotation = Quaternion.Slerp (transform.rotation, targetRotTarg, Time.deltaTime * speed);
-
-		
+		//}
 
 		shootTime-=Time.deltaTime;
 	}

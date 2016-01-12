@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyHealth : MonoBehaviour,Damage {
 	public GameObject destructEnemy;
 	public GameObject explosion;
+	public GameObject sparkles;
 	private bool destroyState = false;
 
 	private Rigidbody rigidbody;
@@ -20,6 +21,14 @@ public class EnemyHealth : MonoBehaviour,Damage {
 
 	void OnParticleCollision(GameObject other) {
 		if(!destroyState) destroySelf ();
+	}
+
+	void OnCollisionEnter (Collision col)
+	{
+		GameObject spark = Instantiate (sparkles, col.contacts [0].point, Quaternion.identity) as GameObject;
+		spark.GetComponent<ParticleSystem> ().Play ();
+		Destroy (spark, 2f);
+		applayDamage ((int)col.impulse.sqrMagnitude);
 	}
 
 	void destroySelf(){
