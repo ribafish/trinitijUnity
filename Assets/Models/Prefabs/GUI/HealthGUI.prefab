@@ -398,6 +398,7 @@ MonoBehaviour:
   healthSlider: {fileID: 11408514}
   hitEffect: {fileID: 11472630}
   hitEffectDuration: 1
+  deathMenu: {fileID: 0}
 --- !u!114 &11446868
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -13,6 +13,9 @@ public class GlobalAudioLevel : MonoBehaviour {
     void Start () {
         mainAudioMixer.SetFloat("musicVolume" ,musicVolume);
         mainAudioMixer.SetFloat("efxVolume", efxVolume);
+
+        GameObject.FindWithTag("EfxVolSlider").GetComponent<Slider>().value = musicVolume;
+        GameObject.FindWithTag("EfxVolSlider").GetComponent<Slider>().value = efxVolume;
     }
 	
 	// Update is called once per frame
