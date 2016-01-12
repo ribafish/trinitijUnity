@@ -32,10 +32,14 @@ public class PauseGame : MonoBehaviour {
 
     public void Pause()
     {
+        AudioSource engineSound = GameObject.Find("Engine Sound").GetComponent<AudioSource>();
+
         if (isPaused == true)
         {
             isPaused = false;
             Globals.instance.menuManager.closeCurrentMenu();
+            engineSound.Play();
+
             Time.timeScale = 1.0f;  // Should resume game
         }
         else
@@ -44,6 +48,7 @@ public class PauseGame : MonoBehaviour {
             Time.timeScale = 0.0f;  // Should pause game
 
             Globals.instance.menuManager.ShowMenu(pauseMenu);
+            engineSound.Pause();
         }
     }
 

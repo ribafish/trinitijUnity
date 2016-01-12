@@ -46,9 +46,9 @@ MonoBehaviour:
   - {fileID: 181326, guid: 20e27126f3dc46140b0d5b3940c43a9c, type: 2}
   asteroidsAmount: 640000006400000032000000
   asteroidsSizeRange:
-  - {x: 10, y: 50}
-  - {x: 5, y: 35}
-  - {x: 8, y: 16}
+  - {x: 45, y: 75}
+  - {x: 35, y: 65}
+  - {x: 32, y: 100}
   randomChoice: 0
 --- !u!1001 &100100000
 Prefab:
@@ -80,6 +80,30 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: areaSize
       value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: asteroidsSizeRange.Array.data[0].y
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: asteroidsSizeRange.Array.data[0].x
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: asteroidsSizeRange.Array.data[1].x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: asteroidsSizeRange.Array.data[1].y
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: asteroidsSizeRange.Array.data[2].x
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: asteroidsSizeRange.Array.data[2].y
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

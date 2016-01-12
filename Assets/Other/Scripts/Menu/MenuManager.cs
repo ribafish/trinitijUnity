@@ -18,11 +18,14 @@ public class MenuManager : MonoBehaviour
 
         CurrentMenu = menu;
         CurrentMenu.IsOpen = true;
+        Cursor.visible = true;
     }
 	public void closeCurrentMenu()
     {
         if (CurrentMenu != null)
             CurrentMenu.IsOpen = false;
+
+        Cursor.visible = false;
     }
 }
 
