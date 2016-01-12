@@ -32,6 +32,6 @@ public class AsteroidPusherInitiate : MonoBehaviour {
     {
         destroyOverTime = true;
         destroyDistance = targetZDistance;
-        Destroy(gameObject, 20);
+        Destroy(gameObject, 40);
     }
 }

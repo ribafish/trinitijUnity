@@ -59,7 +59,10 @@ public class IntroControl : MonoBehaviour {
                 if (introSound.time < (soundBeginHeader / 2))
                     production.color = production.color + lowerAlpha;
                 else
+                {
+                    lowerAlpha = new Color(0, 0, 0, 0.21f) * Time.deltaTime;
                     production.color = production.color - lowerAlpha;
+                }
             }
             if (introSound.time > soundBeginHeader)
             {

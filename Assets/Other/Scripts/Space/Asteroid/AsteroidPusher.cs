@@ -28,6 +28,8 @@ public class AsteroidPusher : MonoBehaviour {
         height = areaSize.y;
         depth = areaSize.z;
 
+        distance = distance + transform.position.z;
+
         if (asteroids != null && asteroidsAmount != null && asteroidsSizeRange != null && playerObj != null && distanceText != null)
         {
             generateNewPushers();
@@ -47,7 +49,14 @@ public class AsteroidPusher : MonoBehaviour {
 
         if (transform.position.z > distance)
         {
-            distanceText.text = "Engaging jump in " + jumpTime + "s";
+            if (jumpTime > 0)
+            {
+                distanceText.text = "Engaging jump in " + jumpTime + "s";
+            }
+            else
+            {
+                distanceText.text = "Jumping!";
+            }
 
             if(jumpTime < 0)
             {
@@ -97,12 +106,12 @@ public class AsteroidPusher : MonoBehaviour {
                 float y = Random.Range(0, height / 2) * Mathf.Pow(-1, Random.Range(1, 3));
                 float z = Random.Range(0, depth / 2) * Mathf.Pow(-1, Random.Range(1, 3));
 
-                randomPosition = new Vector3(x, y, 0);
+                randomPosition = new Vector3(x, y, z);
 
                 GameObject asteroid = Instantiate<GameObject>(asteroids[i]);
                 asteroid.transform.position = transform.position + randomPosition;
                 asteroid.transform.localScale = Vector3.one * Random.Range(minSize, maxSize);
-                asteroid.transform.parent = transform;
+                //asteroid.transform.parent = transform;
                 asteroid.GetComponent<AsteroidPusherInitiate>().setOverTimeDestroy(playerObj.transform.position.z);
                 asteroid.name = "PUSHER";
             }
