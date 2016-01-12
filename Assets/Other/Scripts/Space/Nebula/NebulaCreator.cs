@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NebulaCreator : MonoBehaviour {
+public class NebulaCreator : MonoBehaviour
+{
 
     public Vector3 areaSize = Vector3.zero;
 

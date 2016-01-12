@@ -32,13 +32,18 @@ public class PauseGame : MonoBehaviour {
 
     public void Pause()
     {
-        AudioSource engineSound = GameObject.Find("Engine Sound").GetComponent<AudioSource>();
+        GameObject engine = GameObject.Find("Engine Sound");
+        AudioSource engineSound = null;
+
+        if (engine != null)
+            engineSound = engine.GetComponent<AudioSource>();
 
         if (isPaused == true)
         {
             isPaused = false;
             Globals.instance.menuManager.closeCurrentMenu();
-            engineSound.Play();
+            if(engineSound != null)
+                engineSound.Play();
 
             Time.timeScale = 1.0f;  // Should resume game
         }
@@ -48,7 +53,8 @@ public class PauseGame : MonoBehaviour {
             Time.timeScale = 0.0f;  // Should pause game
 
             Globals.instance.menuManager.ShowMenu(pauseMenu);
-            engineSound.Pause();
+            if (engineSound != null)
+                engineSound.Pause();
         }
     }
 
