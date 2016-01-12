@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyHealth : MonoBehaviour,Damage {
 	public GameObject destructEnemy;
 	public GameObject explosion;
+	private bool destroyState = false;
 
 	private Rigidbody rigidbody;
 	// Use this for initialization
@@ -18,11 +19,12 @@ public class EnemyHealth : MonoBehaviour,Damage {
 
 
 	void OnParticleCollision(GameObject other) {
-		destroySelf ();
-
+		if(!destroyState) destroySelf ();
 	}
 
 	void destroySelf(){
+		destroyState = true;
+
 		//Rigidbody body = other.GetComponent<Rigidbody>();
 		GameObject obj = Instantiate (destructEnemy, transform.position, transform.rotation) as GameObject;
 
@@ -48,6 +50,7 @@ public class EnemyHealth : MonoBehaviour,Damage {
 
 		Destroy (gameObject);
 		Destroy (expl, 3f);
+		Destroy (obj, 4f);
 		//Destroy (obj, Random.value+0.5f);
 	}
 

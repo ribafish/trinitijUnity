@@ -179,18 +179,23 @@ public class ShipControls : MonoBehaviour,Damage{
 		Destroy (spark, 2f);
 		if(healthGUI!=null)
 			healthGUI.GetComponentInChildren<HitHealthShield> ().Hit ((int)col.impulse.magnitude*5);
-		//Hit ((int)col.impulse.sqrMagnitude);
+		applayDamage ((int)col.impulse.sqrMagnitude);
 		/*if(col.gameObject.name == "prop_powerCube")
 		{
 			Destroy(col.gameObject);
 		}*/
 
         //Debug.Log("Player hit: " + other.gameObject.name);
-        if (col.gameObject.name.Contains("Meteorid_"))
+       /* if (col.gameObject.name.Contains("Meteorid_"))
         {
             igralecZivljenja.Hit(50);
-        }
+        }*/
 	}
+
+	void OnParticleCollision(GameObject other) {
+		applayDamage (10);
+	}
+
 	public void kill(){
 		GameObject expl = Instantiate (explosion, transform.position, transform.rotation) as GameObject;
 		expl.GetComponent<ParticleSystem> ().Play ();
