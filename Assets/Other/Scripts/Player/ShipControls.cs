@@ -13,6 +13,8 @@ public class ShipControls : MonoBehaviour,Damage{
 	public GameObject sparkles;
 	public GameObject healthGUI;
 	public GameObject explosion;
+	//public GameObject cursor;
+	public RectTransform cursor;
 
 	private float thrust = 0;
 	private Quaternion oldRotation;
@@ -42,6 +44,8 @@ public class ShipControls : MonoBehaviour,Damage{
 
         //nalozimo skripto, ki omogoca streljanje na igralca
         igralecZivljenja = GameObject.Find("HealthShieldBars").GetComponent<HitHealthShield>();
+
+		Cursor.visible = false;
 	}
 
     // Update is called once per frame
@@ -135,6 +139,12 @@ public class ShipControls : MonoBehaviour,Damage{
 
                 //Vector3 normal = Vector3.Slerp(transform.up, Vector3.up, speed * Time.deltaTime);
 
+				Vector3 pos = Camera.main.WorldToScreenPoint((shipCamera.position + transform.forward * 200) + rigidBody.velocity/2);
+				//cursor.transform.localPosition = new Vector3 (pos.x, pos.y, 5);
+				//shipCamera.GetComponentInChildren<Image>() = new Rect (pos, new Vector3 (20, 20));
+				//GUI.DrawTexture(new Rect(pos,new Vector2(20,20)), cursor);
+				cursor.anchoredPosition = pos;
+
 
                 // Determine the target rotation.  This is the rotation if the transform looks at the target point
                 Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position, transform.up);
@@ -159,6 +169,7 @@ public class ShipControls : MonoBehaviour,Damage{
 		Vector3 cameraNoise = new Vector3 (Mathf.PerlinNoise(Time.time*10,0),Mathf.PerlinNoise(Time.time*10,0)) * speedPercent;
 		shipCamera.position = transform.TransformPoint (cameraPosDiff + cameraDistance + cameraNoise);
 		//shipCamera.position = Vector3.Slerp(shipCamera.position, transform.position, 0.5f);
+
 	}
     
 	void OnCollisionEnter (Collision col)
