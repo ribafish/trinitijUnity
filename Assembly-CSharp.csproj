@@ -81,6 +81,7 @@
      <Compile Include="Assets\Other\Scripts\Space\Asteroid\AsteroidForce.cs" />
      <Compile Include="Assets\Other\Scripts\Space\Asteroid\AsteroidInitiate.cs" />
      <Compile Include="Assets\Other\Scripts\Space\Asteroid\AsteroidPusher.cs" />
+     <Compile Include="Assets\Other\Scripts\Space\Asteroid\AsteroidPusherInitiate.cs" />
      <Compile Include="Assets\Other\Scripts\Space\Nebula\NebulaCreator.cs" />
      <Compile Include="Assets\Other\Scripts\Space\Planet\Rotation.cs" />
      <Compile Include="Assets\Other\Scripts\UI\IntroControl.cs" />

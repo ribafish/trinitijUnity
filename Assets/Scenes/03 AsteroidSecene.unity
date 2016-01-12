@@ -1613,7 +1613,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 412756, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 2000
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 412756, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1640,6 +1640,42 @@ Prefab:
       value: 
       objectReference: {fileID: 920877701}
     - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
+      propertyPath: distanceText
+      value: 
+      objectReference: {fileID: 1598911171}
+    - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
+      propertyPath: minDistance
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
+      propertyPath: asteroidsSizeRange.Array.data[0].y
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
+      propertyPath: asteroidsSizeRange.Array.data[1].y
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
+      propertyPath: asteroidsSizeRange.Array.data[2].y
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
+      propertyPath: asteroidsAmount.Array.data[0]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
+      propertyPath: asteroidsAmount.Array.data[1]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
+      propertyPath: asteroidsAmount.Array.data[2]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
+      propertyPath: setSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
       propertyPath: areaSize.x
       value: 2000
       objectReference: {fileID: 0}
@@ -1648,25 +1684,13 @@ Prefab:
       value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
-      propertyPath: asteroidsAmount.Array.data[0]
-      value: 5
+      propertyPath: areaSize.z
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
-      propertyPath: asteroidsAmount.Array.data[1]
-      value: 5
+      propertyPath: distance
+      value: 6000
       objectReference: {fileID: 0}
-    - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
-      propertyPath: asteroidsAmount.Array.data[2]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 154686, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11427000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
-      propertyPath: distanceText
-      value: 
-      objectReference: {fileID: 1598911171}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f54aa9e987a0b964286c9a6ac5fb7ff0, type: 2}
   m_IsPrefabParent: 0
@@ -1847,7 +1871,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1598911169}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -267}
+  m_LocalPosition: {x: 0, y: 0, z: -180}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1498153749}

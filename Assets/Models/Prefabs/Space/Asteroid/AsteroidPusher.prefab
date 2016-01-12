@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2000}
+  m_LocalPosition: {x: 0, y: 0, z: 500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,17 +39,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8804565e4b815c14dacb225d356dcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaSize: {x: 7500, y: 7500}
+  minDistance: 500
+  areaSize: {x: 2000, y: 2000}
   asteroids:
-  - {fileID: 181760, guid: ce83c8b2bf762554d91a421550d7bb69, type: 2}
-  - {fileID: 178370, guid: a5055182d7434ab4ca21594549ca5e8d, type: 2}
-  - {fileID: 180410, guid: d1890cd0748ebbd4dadd1079fdf1a4e3, type: 2}
-  asteroidsAmount: 140000001400000014000000
+  - {fileID: 127824, guid: 20ac31a8c6a70a5438183582f96ee074, type: 2}
+  - {fileID: 110210, guid: bd57781c2b47b0a4aa1e93106bbf334c, type: 2}
+  - {fileID: 181730, guid: 425bcad499673a64899350de09380649, type: 2}
+  asteroidsAmount: 070000000700000007000000
   asteroidsSizeRange:
   - {x: 25, y: 55}
   - {x: 21, y: 64}
   - {x: 18, y: 38}
   playerObj: {fileID: 0}
+  distanceText: {fileID: 0}
+  setSpawnTime: 10
+  timerTillSpawn: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

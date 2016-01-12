@@ -186,10 +186,10 @@ public class ShipControls : MonoBehaviour,Damage{
 		}*/
 
         //Debug.Log("Player hit: " + other.gameObject.name);
-       /* if (col.gameObject.name.Contains("Meteorid_"))
+        if (col.gameObject.name.Contains("Meteorid_"))
         {
             igralecZivljenja.Hit(50);
-        }*/
+        }
 	}
 
 	void OnParticleCollision(GameObject other) {
