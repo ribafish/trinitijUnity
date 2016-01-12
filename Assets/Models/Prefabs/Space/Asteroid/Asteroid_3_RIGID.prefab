@@ -1,76 +1,76 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &139842
+--- !u!1 &116932
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 472778}
-  - 33: {fileID: 3357670}
-  - 23: {fileID: 2342900}
-  - 135: {fileID: 13507988}
-  - 64: {fileID: 6427256}
+  - 4: {fileID: 469818}
+  - 33: {fileID: 3324886}
+  - 23: {fileID: 2307634}
+  - 54: {fileID: 5478924}
+  - 64: {fileID: 6489326}
   m_Layer: 0
-  m_Name: Meteorid_1
+  m_Name: Meteorid_3_simplified
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &165878
+--- !u!1 &180410
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 498892}
-  - 114: {fileID: 11474998}
+  - 4: {fileID: 454714}
+  - 114: {fileID: 11413850}
   m_Layer: 0
-  m_Name: Asteroid_1
+  m_Name: Asteroid_3_RIGID
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &472778
+--- !u!4 &454714
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 139842}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 498892}
-  m_RootOrder: 0
---- !u!4 &498892
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165878}
+  m_GameObject: {fileID: 180410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 472778}
+  - {fileID: 469818}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2342900
+--- !u!4 &469818
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116932}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 454714}
+  m_RootOrder: 0
+--- !u!23 &2307634
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 139842}
+  m_GameObject: {fileID: 116932}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: ae62bc799f9002e4c909b7fdc17008b0, type: 2}
+  - {fileID: 2100000, guid: 8931e9cdc8b46ad429a4e67e3bf9e908, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -86,50 +86,55 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3357670
+--- !u!33 &3324886
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 139842}
-  m_Mesh: {fileID: 4300000, guid: bc424e9f8783551488592f8346f9892e, type: 3}
---- !u!64 &6427256
+  m_GameObject: {fileID: 116932}
+  m_Mesh: {fileID: 4300000, guid: ebcc9cb711fdfcd4f9c3f45a65f1e0c9, type: 3}
+--- !u!54 &5478924
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116932}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 3
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6489326
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 139842}
+  m_GameObject: {fileID: 116932}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 1
-  m_Mesh: {fileID: 4300000, guid: bc424e9f8783551488592f8346f9892e, type: 3}
---- !u!114 &11474998
+  m_Mesh: {fileID: 4300000, guid: ebcc9cb711fdfcd4f9c3f45a65f1e0c9, type: 3}
+--- !u!114 &11413850
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165878}
+  m_GameObject: {fileID: 180410}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2189cc08656f5bc4da7c6ae62f7d4d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedRange: 3
-  speedRotation: 3
---- !u!135 &13507988
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 139842}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 1.9728279
-  m_Center: {x: -0.012095571, y: 0.064313054, z: -0.13827544}
+  speedRange: 2
+  speedRotation: 5
+  destroyOverTime: 0
+  destroyDistance: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -138,46 +143,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: speedRange
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: speedRotation
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
       propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: bc424e9f8783551488592f8346f9892e, type: 3}
-    - target: {fileID: 0}
-      propertyPath: m_AngularDrag
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 165878}
+  m_RootGameObject: {fileID: 180410}
   m_IsPrefabParent: 1

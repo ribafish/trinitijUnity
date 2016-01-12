@@ -4,6 +4,7 @@ using UnityEngine.Audio;
 using System.Collections;
 
 public class GlobalAudioLevel : MonoBehaviour {
+    public static GlobalAudioLevel instance;
 
     [Range(0.0f, 1.0f)] public static float musicVolume = 0.0f;
     [Range(0.0f, 1.0f)] public static float efxVolume = 0.0f;
@@ -11,8 +12,14 @@ public class GlobalAudioLevel : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        mainAudioMixer.SetFloat("musicVolume" ,musicVolume);
+
+        mainAudioMixer.SetFloat("musicVolume", musicVolume);
         mainAudioMixer.SetFloat("efxVolume", efxVolume);
+
+        GameObject tmp = GameObject.FindWithTag("MusicVolSlider");
+        if (tmp != null) tmp.GetComponent<Slider>().value = musicVolume;
+        tmp = GameObject.FindWithTag("EfxVolSlider");
+        if (tmp != null) tmp.GetComponent<Slider>().value = efxVolume;
     }
 	
 	// Update is called once per frame

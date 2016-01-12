@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &154686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 412756}
+  - 114: {fileID: 11427000}
+  m_Layer: 0
+  m_Name: AsteroidPusher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412756
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2000}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11427000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8804565e4b815c14dacb225d356dcdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaSize: {x: 7500, y: 7500}
+  asteroids:
+  - {fileID: 181760, guid: ce83c8b2bf762554d91a421550d7bb69, type: 2}
+  - {fileID: 178370, guid: a5055182d7434ab4ca21594549ca5e8d, type: 2}
+  - {fileID: 180410, guid: d1890cd0748ebbd4dadd1079fdf1a4e3, type: 2}
+  asteroidsAmount: 140000001400000014000000
+  asteroidsSizeRange:
+  - {x: 25, y: 55}
+  - {x: 21, y: 64}
+  - {x: 18, y: 38}
+  playerObj: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 154686}
+  m_IsPrefabParent: 1

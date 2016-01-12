@@ -10,6 +10,10 @@ public class AsteroidInitiate : MonoBehaviour
     float asteroidSpeed;
     float astroidRoation;
 
+    public bool destroyOverTime = false;
+    public float destroyDistance = 0;
+    bool reset = false;
+
     void Start()
     {
         asteroidSpeed = Random.value * Random.Range(0, speedRange);
@@ -49,14 +53,41 @@ public class AsteroidInitiate : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position += asteroidMove * asteroidSpeed;
-        float x = transform.rotation.x;
+        /*float x = transform.rotation.x;
         float y = transform.rotation.y;
         float z = transform.rotation.z;
         float w = transform.rotation.w;
         x = x + x * astroidRoation;
         y = y + y * astroidRoation;
         z = z + z * astroidRoation;
-        transform.rotation.Set(x, y, z, w);
+        transform.rotation.Set(x, y, z, w);*/
+
+        if (destroyOverTime)
+        {
+            if(!reset)
+            {
+                transform.rotation = Quaternion.AngleAxis(180, Vector3.up);
+                asteroidMove = Vector3.forward;
+                asteroidSpeed = 100;
+                reset = true;
+            }
+            transform.position -= new Vector3(0, 0, asteroidSpeed * Time.deltaTime);
+            //Debug.Log(transform.position);
+
+            if (transform.position.z < destroyDistance)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            transform.position += asteroidMove * asteroidSpeed;
+        }
+    }
+
+    public void setOverTimeDestroy(float targetZDistance)
+    {
+        destroyOverTime = true;
+        destroyDistance = targetZDistance;
     }
 }

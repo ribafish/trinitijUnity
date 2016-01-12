@@ -15,6 +15,8 @@ public class HitHealthShield : MonoBehaviour {
     float hitEffectTime = 0;
     const float hitAlpha = 0.3f;
 
+    public Menu deathMenu;
+
 
 	// Use this for initialization
 	void Start () {
@@ -80,6 +82,7 @@ public class HitHealthShield : MonoBehaviour {
 			GameObject player = GameObject.FindGameObjectWithTag("Player");
             if(player != null)
 			    player.GetComponentInChildren<ShipControls> ().kill ();
+            Globals.instance.menuManager.ShowMenu(deathMenu);
         }
 
         if (shield != shieldSlider.value)
