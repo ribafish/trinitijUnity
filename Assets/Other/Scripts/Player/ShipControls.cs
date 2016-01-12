@@ -160,17 +160,7 @@ public class ShipControls : MonoBehaviour,Damage{
 		shipCamera.position = transform.TransformPoint (cameraPosDiff + cameraDistance + cameraNoise);
 		//shipCamera.position = Vector3.Slerp(shipCamera.position, transform.position, 0.5f);
 	}
-
-<<<<<<< HEAD
-    void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("Player hit: " + other.gameObject.name);
-        if(other.gameObject.name.Contains("Meteorid_"))
-        {
-            igralecZivljenja.Hit(50);
-        }
-    }
-=======
+    
 	void OnCollisionEnter (Collision col)
 	{
 		GameObject spark = Instantiate (sparkles, col.contacts [0].point, Quaternion.identity) as GameObject;
@@ -183,6 +173,12 @@ public class ShipControls : MonoBehaviour,Damage{
 		{
 			Destroy(col.gameObject);
 		}*/
+
+        //Debug.Log("Player hit: " + other.gameObject.name);
+        if (col.gameObject.name.Contains("Meteorid_"))
+        {
+            igralecZivljenja.Hit(50);
+        }
 	}
 	public void kill(){
 		GameObject expl = Instantiate (explosion, transform.position, transform.rotation) as GameObject;
@@ -195,5 +191,4 @@ public class ShipControls : MonoBehaviour,Damage{
 		if(healthGUI!=null)
 			healthGUI.GetComponentInChildren<HitHealthShield> ().Hit (amount);
 	}
->>>>>>> origin/master
 }
