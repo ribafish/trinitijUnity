@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3924.2778, y: -4576.828, z: -15384.213}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,14 +41,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaSize: 2000
   asteroids:
-  - {fileID: 165878, guid: 94e31424939f0a84287b901ea6fdf2fa, type: 2}
-  - {fileID: 129446, guid: 0ad8d0aadfb41b946b50ace83a4fa0eb, type: 2}
-  - {fileID: 181326, guid: 20e27126f3dc46140b0d5b3940c43a9c, type: 2}
-  asteroidsAmount: 320000003200000019000000
+  - {fileID: 198760, guid: 44df7c5c8a7824c6194b2da760e5fbb6, type: 2}
+  - {fileID: 166004, guid: cdbbda87d94554ece8463fb06faa5a9d, type: 2}
+  asteroidsAmount: 3200000032000000
   asteroidsSizeRange:
   - {x: 10, y: 50}
   - {x: 5, y: 35}
-  - {x: 8, y: 16}
   randomChoice: 0
 --- !u!1001 &100100000
 Prefab:
