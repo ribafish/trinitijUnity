@@ -40,46 +40,50 @@ public class AsteroidPusher : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        transform.position = new Vector3(playerObj.transform.position.x, playerObj.transform.position.y, transform.position.z);
-
-        if ((transform.position.z - playerObj.transform.position.z) < minDistance)
+        if (playerObj != null)
         {
-            transform.position += Vector3.forward * 200 * Time.deltaTime;
-        }
 
-        if (transform.position.z > distance)
-        {
-            if (jumpTime > 0)
+            transform.position = new Vector3(playerObj.transform.position.x, playerObj.transform.position.y, transform.position.z);
+
+            if ((transform.position.z - playerObj.transform.position.z) < minDistance)
             {
-                distanceText.text = "Engaging jump in " + jumpTime + "s";
+                transform.position += Vector3.forward * 200 * Time.deltaTime;
+            }
+
+            if (transform.position.z > distance)
+            {
+                if (jumpTime > 0)
+                {
+                    distanceText.text = "Engaging jump in " + jumpTime + "s";
+                }
+                else
+                {
+                    distanceText.text = "Jumping!";
+                }
+
+                if (jumpTime < 0)
+                {
+                    Scene currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene.buildIndex + 1);
+                }
+
+                jumpTime -= 1 * Time.deltaTime;
+                Camera.main.fieldOfView += 18 * Time.deltaTime;
             }
             else
             {
-                distanceText.text = "Jumping!";
-            }
+                if (timerTillSpawn <= 0)
+                {
+                    generateNewPushers();
+                    timerTillSpawn = setSpawnTime;
+                }
+                else
+                {
+                    timerTillSpawn -= 1 * Time.deltaTime;
+                }
 
-            if(jumpTime < 0)
-            {
-                Scene currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-                UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene.buildIndex + 1);
+                distanceText.text = Mathf.RoundToInt(distance - transform.position.z) + "m";
             }
-
-            jumpTime -= 1 * Time.deltaTime;
-            Camera.main.fieldOfView += 18 * Time.deltaTime;
-        }
-        else
-        {
-            if (timerTillSpawn <= 0)
-            {
-                generateNewPushers();
-                timerTillSpawn = setSpawnTime;
-            }
-            else
-            {
-                timerTillSpawn -= 1 * Time.deltaTime;
-            }
-
-            distanceText.text = Mathf.RoundToInt(distance - transform.position.z) + "m";
         }
 	}
 

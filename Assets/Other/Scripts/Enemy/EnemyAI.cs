@@ -58,7 +58,7 @@ public class EnemyAI : MonoBehaviour {
 			if (hit.rigidbody != null && hit.rigidbody.gameObject.tag == "Player") {
 				shoot ();
 			} else {
-				Debug.Log (hit.point);
+				//Debug.Log (hit.point);
 				//hitvec = (new Vector3 (1000, 1000, 1000) - (transform.position - hit.point));
 				hitvec += ((new Vector3 (raydist, raydist, raydist) - (transform.position - hit.point))/raydist)*2;
 			}
@@ -85,21 +85,24 @@ public class EnemyAI : MonoBehaviour {
 		//Debug.Log (speed);
 
 		//if (!hitRotation) {
-		float distance = Vector3.Distance (target.position, transform.position);
-		//speed = Mathf.Clamp01 (distance / 200f);
-		Vector3 targetVec = (target.position - transform.position).normalized * 10; //Mathf.Clamp(1000 - Vector3.Distance(target.position, transform.position), 2, 200);
+        if (target != null)
+        {
+            float distance = Vector3.Distance(target.position, transform.position);
+            //speed = Mathf.Clamp01 (distance / 200f);
+            Vector3 targetVec = (target.position - transform.position).normalized * 10; //Mathf.Clamp(1000 - Vector3.Distance(target.position, transform.position), 2, 200);
 
-		Quaternion targetRotTarg = Quaternion.LookRotation (hitvec + targetVec, Vector3.up);
-		hitvec = hitvec / 1.2f;
-		//Debug.Log (hitvec.magnitude);
-		if (distance < 50 || Vector3.Angle((target.position - transform.position), transform.forward) < 3)
-				shoot ();
+            Quaternion targetRotTarg = Quaternion.LookRotation(hitvec + targetVec, Vector3.up);
+            hitvec = hitvec / 1.2f;
+            //Debug.Log (hitvec.magnitude);
+            if (distance < 50 || Vector3.Angle((target.position - transform.position), transform.forward) < 3)
+                shoot();
 
-		transform.rotation = Quaternion.Slerp (transform.rotation, targetRotTarg, Time.deltaTime * speed + 0.3f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotTarg, Time.deltaTime * speed + 0.3f);
 
-		//}
+            //}
 
-		shootTime-=Time.deltaTime;
+            shootTime -= Time.deltaTime;
+        }
 	}
 
 	private float shootTime = 0;
