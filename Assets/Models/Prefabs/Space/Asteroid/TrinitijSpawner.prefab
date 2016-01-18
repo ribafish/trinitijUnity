@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &152686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 452310}
+  - 114: {fileID: 11456046}
+  m_Layer: 0
+  m_Name: TrinitijSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &452310
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2250, y: 0, z: -4250}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11456046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f4ad6b0c7701c44b49eda2338e9751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaSize: 2000
+  asteroids:
+  - {fileID: 198760, guid: 44df7c5c8a7824c6194b2da760e5fbb6, type: 2}
+  - {fileID: 166004, guid: cdbbda87d94554ece8463fb06faa5a9d, type: 2}
+  asteroidsAmount: 3200000032000000
+  asteroidsSizeRange:
+  - {x: 10, y: 50}
+  - {x: 5, y: 35}
+  randomChoice: 0
+  trinitj: {fileID: 140090, guid: 69817bed89cfc1945acf88b22b8356ea, type: 2}
+  sizeOfProtectedArea: {x: 200, y: 200, z: 200}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 152686}
+  m_IsPrefabParent: 1
