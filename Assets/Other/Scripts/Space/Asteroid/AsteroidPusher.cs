@@ -12,7 +12,7 @@ public class AsteroidPusher : MonoBehaviour {
     public Vector2[] asteroidsSizeRange = null;
     public GameObject playerObj = null;
     public Text distanceText = null;
-
+    public Text instructionText = null;
 
     public float distance = 6000;
     float width = 0;
@@ -30,10 +30,10 @@ public class AsteroidPusher : MonoBehaviour {
 
         distance = distance + transform.position.z;
 
-        if (asteroids != null && asteroidsAmount != null && asteroidsSizeRange != null && playerObj != null && distanceText != null)
+        if (asteroids != null && asteroidsAmount != null && asteroidsSizeRange != null && playerObj != null && distanceText != null && instructionText != null)
         {
             generateNewPushers();
-
+            setInstructionText("Escape asteroid field");
             distanceText.text = Mathf.RoundToInt(distance) + "m";
         }
 	}
@@ -82,7 +82,13 @@ public class AsteroidPusher : MonoBehaviour {
                     timerTillSpawn -= 1 * Time.deltaTime;
                 }
 
-                distanceText.text = Mathf.RoundToInt(distance - transform.position.z) + "m";
+                if (!showText)
+                {
+                    distanceText.color = Color.white;
+                    distanceText.text = Mathf.RoundToInt(distance - transform.position.z) + "m";
+                }
+
+                displayInstructionText(30.0f);
             }
         }
 	}
@@ -93,6 +99,37 @@ public class AsteroidPusher : MonoBehaviour {
         Gizmos.DrawWireCube(transform.position, new Vector3(areaSize.x, areaSize.y, 10));
     }
 
+    //text handling
+    //Instruction Text Control
+    private bool showText = false;
+    private int stateText = 0;
+    private Color alphaText = new Color(0, 0, 0, 0.01f);
+
+    void setInstructionText(string text)
+    {
+        instructionText.text = text;
+        instructionText.color = new Color(1, 1, 1, 0);
+        showText = true;
+    }
+
+    void displayInstructionText(float speed)
+    {
+        if (showText)
+        {
+            instructionText.color = instructionText.color + (alphaText * speed * Time.deltaTime);
+
+            if (instructionText.color.a >= 1.0f)
+                alphaText = alphaText * -1;
+
+            if (instructionText.color.a <= 0.0f)
+            {
+                alphaText = alphaText * -1;
+                showText = false;
+            }
+        }
+    }
+
+    //generate asteroids
     void generateNewPushers()
     {
         Vector3 randomPosition = Vector3.zero;

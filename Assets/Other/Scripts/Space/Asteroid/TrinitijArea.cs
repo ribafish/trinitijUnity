@@ -179,7 +179,7 @@ public class TrinitijArea : MonoBehaviour {
     void spawningEnemies()
     {
         //if enemy spawning, time is not up and text is not shown
-        if (spawnEnemy && !timeUp && !showText)
+        if (spawnEnemy && !timeUp && !showText && player != null)
         {
             instructionText.text = timeTillRescue + "s";
             instructionText.color = Color.white;
