@@ -87,6 +87,7 @@
      <Compile Include="Assets\Other\Scripts\Space\Nebula\NebulaCreator.cs" />
      <Compile Include="Assets\Other\Scripts\Space\Planet\Rotation.cs" />
      <Compile Include="Assets\Other\Scripts\UI\IntroControl.cs" />
+     <Compile Include="Assets\Other\Scripts\UI\OutroControl.cs" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />

@@ -95,7 +95,7 @@ public class TrinitijArea : MonoBehaviour {
                     if(!showText && player != null)
                     {
                         int curIdx = Globals.instance.sceneManager.GetCurSceneIndex();
-                        Globals.instance.sceneManager.SwitchToScene(0);
+                        Globals.instance.sceneManager.SwitchToScene(curIdx + 1);
                     }
                     break;
             }
