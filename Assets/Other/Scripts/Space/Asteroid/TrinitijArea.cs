@@ -22,6 +22,7 @@ public class TrinitijArea : MonoBehaviour {
     Bounds enemySpawnArea;
 
     public Text instructionText = null;
+    public float timeTillRescue = 30;
 
     void Start()
     {
@@ -86,7 +87,16 @@ public class TrinitijArea : MonoBehaviour {
 
                 case 2:
                     setInstructionText("Help has arrived!\nYou won :)");
-                    stateMission = -1;
+                    stateMission = -2;
+                    break;
+
+                //THE END
+                case -2:
+                    if(!showText && player != null)
+                    {
+                        int curIdx = Globals.instance.sceneManager.GetCurSceneIndex();
+                        Globals.instance.sceneManager.SwitchToScene(0);
+                    }
                     break;
             }
         }
@@ -141,6 +151,9 @@ public class TrinitijArea : MonoBehaviour {
     //enemy control
     private bool playerFounTrinity = false;
     private bool spawnEnemy = false;
+    private bool timeUp = false;
+    private float ENEMY_SPAWN_TIME = 8;
+    private float enemySpawnTime = 8;
 
     void isPlayerInEnemySpawnArea()
     {
@@ -155,6 +168,48 @@ public class TrinitijArea : MonoBehaviour {
                 }
 
                 spawnEnemy = true;
+            }
+        }
+        else
+        {
+            spawningEnemies();
+        }
+    }
+
+    void spawningEnemies()
+    {
+        //if enemy spawning, time is not up and text is not shown
+        if (spawnEnemy && !timeUp && !showText)
+        {
+            instructionText.text = timeTillRescue + "s";
+            instructionText.color = Color.white;
+
+            if (enemySpawnTime < 0)
+            {
+                Vector3 randomPosition = Vector3.zero;
+
+                for (int i = 0; i < 5; i++)
+                {
+                    randomPosition = Random.onUnitSphere * (areaSize/2);
+
+                    GameObject tmpEnemy = Instantiate<GameObject>(enemy);
+                    tmpEnemy.transform.parent = transform;
+                    tmpEnemy.transform.position = transform.position + randomPosition;
+                    tmpEnemy.transform.rotation = Random.rotation;
+                    if (player != null)
+                        tmpEnemy.GetComponent<EnemyAI>().target = player.transform;
+                }
+
+                enemySpawnTime = ENEMY_SPAWN_TIME;
+            }
+
+            enemySpawnTime -= 1 * Time.deltaTime;
+            timeTillRescue -= 1 * Time.deltaTime;
+
+            if(timeTillRescue < 0)
+            {
+                timeUp = true;
+                stateMission = 2;
             }
         }
     }
